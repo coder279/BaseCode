@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"github.com/spf13/cobra"
 )
 
@@ -16,7 +15,6 @@ func Execute() error{
 }
 
 func init(){
-	fmt.Println(1)
 	rootCmd.AddCommand(WordCmd)
 }
 

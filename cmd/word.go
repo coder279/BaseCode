@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"app/internal/word"
+	"fmt"
 	"github.com/spf13/cobra"
 	"log"
 	"strings"
@@ -42,6 +43,7 @@ var WordCmd = &cobra.Command{
 		case MODE_UNDERSCORE_TO_UPPER_CAMELCASE:
 			content = word.UndercoreToUpperCamelCase(str)
 		case MODE_UNDERSCORE_TO_LOWER_CAMELCASE:
+			fmt.Println(1)
 			content = word.UndercoreToLowerCamelCase(str)
 		case MODE_CAMELCASE_TO_UNDERSCORE:
 			content = word.CamelCaseToUnderscore(str)

@@ -20,18 +20,17 @@ func UndercoreToUpperCamelCase(s string)string{
 }
 
 func UndercoreToLowerCamelCase(s string)string{
-	s = UndercoreToUpperCamelCase(s)
-	return string(unicode.ToLower(rune(s[0]))) + s[1:]
+	str := UndercoreToUpperCamelCase(s)
+	return string(unicode.ToLower(rune(str[0]))) + ToLower(str[1:])
 }
 
 func CamelCaseToUnderscore(s string)string{
 	var output []rune
-	for i,r := range s{
-		if i == 0{
-			output = append(output, unicode.ToLower(r))
-			continue
-		}
+	for _,r := range s{
 		if unicode.IsUpper(r){
+			output = append(output,unicode.ToLower(r))
+			output = append(output,'_')
+		}else{
 			output = append(output,unicode.ToLower(r))
 		}
 	}
