@@ -1,18 +1,20 @@
 package main
 
 import (
-	"app/flags"
-	"flag"
-	"fmt"
-	"github.com/spf13/cobra"
+	"github.com/prometheus/common/log"
+	"app/cmd"
 )
-
 
 func main() {
 	//p:=flagChild()
 	//fmt.Println(p)
-	var name flags.Name
-	flag.Var(&name,"name","help")
-	flag.Parse()
-	fmt.Println(name)
+	//var name flags.Name
+	//	//flag.Var(&name,"name","help")
+	//	//flag.Parse()
+	//	//fmt.Println(name)
+
+	err := cmd.Execute()
+	if err != nil {
+		log.Fatalf("cmd Excute err:%v",err)
+	}
 }
