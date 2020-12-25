@@ -16,5 +16,8 @@ func Execute() error{
 
 func init(){
 	rootCmd.AddCommand(WordCmd)
+	rootCmd.AddCommand(TimeCmd)
+
+
 }
 
